@@ -1,58 +1,54 @@
-# Time Series Analysis: Stock Price Prediction
+# Time Series Analysis and Trading Strategy with ARIMA
 
-This repository contains a Jupyter notebook that demonstrates the application of various time series analysis techniques to predict stock prices. This project employs multiple statistical and machine learning models to forecast future prices using historical market data.
 
-## Project Overview
+## Project overview
+This project demonstrates time series forecasting and quantitative trading strategies using Palantir Technologies Inc. (PLTR) stock data retrieved via yfinance. It includes:
 
-The goal of this project is to explore and apply different time series forecasting methods to predict stock prices, leveraging historical market data to discern patterns and predict future trends effectively.
+✔️ Data preprocessing: Cleaning, splitting, and resampling time series data
+✔️ Exploratory Data Analysis (EDA): Visualizing stock price trends, log returns, and distribution analysis
+✔️ Seasonality and trend decomposition: Using statsmodels for additive/multiplicative decomposition
+✔️ Autocorrelation & Partial Autocorrelation (ACF/PACF): Identifying optimal ARIMA parameters
+✔️ ARIMA modeling: Time series forecasting using an ARIMA model
+✔️ Trading strategy simulation: Implementing buy/sell signals based on forecasted values
+✔️ Performance evaluation: Calculating Sharpe ratio, cumulative returns, and drawdown analysis
 
-## Features
+## Package used
+* Python 🐍
+* yfinance (Yahoo Finance API) 📊
+* pandas (Data handling)
+* numpy (Numerical computations)
+* matplotlib / seaborn (Data visualization) 📈
+* statsmodels (Time series modeling & ARIMA)
+* scipy.stats (Statistical analysis)
+* sklearn.metrics (Model evaluation)
 
-- **Multiple Forecasting Models**: Implements Linear Regression, Holt-Winters, ARIMA, and VAR models to address different data characteristics.
-- **Comprehensive Data Preprocessing**: Involves normalization, handling missing values, stationarity checks, and cointegration checks to prepare data for analysis.
-- **Statistical Analysis**: Deep dive into data characteristics using Pearson correlation, ADF Test for stationarity, and Cointegration Tests.
-- **Visualization**: Extensive plots for data exploration and result presentation to facilitate intuitive understanding and analysis.
 
-## Methodology
+## Implementation steps
+1. Data Preprocessing
+   * Downloading PLTR stock data using yfinance
+   * Checking for missing values
+   * Splitting data into training (90%) and testing (10%) sets
+   * Resampling data into daily, monthly, quarterly intervals for better trend analysis
+2. Exploratory Data Analysis (EDA)
+   * Stock price visualization
+   * Log returns & distribution analysis
+   * Autocorrelation (ACF) & Partial Autocorrelation (PACF) plots for ARIMA tuning
+   * Seasonal decomposition of trends
+3. Time Series Forecasting with ARIMA
+   * Using ARIMA for price prediction
+   * Tuning parameters (p, q) based on AIC/BIC score
+   * Rolling window forecast for more accurate predictions
+   * Confidence intervals to assess prediction uncertainty
+4. Trading Strategy
+* Signal Generation:
+   * Buy (1) if predicted price is higher than the current price
+   * Sell (-1) if predicted price is lower than the current price
+* Strategy Performance Evaluation:
+   * Sharpe Ratio
+   * Cumulative Returns
+   * Drawdown Analysis
 
-1. **Data Collection**:
-   - Retrieve historical stock price data from reputable financial market databases.
-
-2. **Data Preprocessing**:
-   - Clean and normalize the data to ensure consistency and reliability for analysis.
-
-3. **Exploratory Data Analysis (EDA)**:
-   - Perform preliminary analyses to understand the data’s underlying patterns and characteristics.
-
-4. **Modeling**:
-   - Deploy several forecasting models:
-     - **Linear Regression**: Captures linear relationships.
-     - **Holt-Winters**: Addresses seasonality and trends.
-     - **ARIMA**: Suitable for non-seasonal data prediction.
-     - **VAR**: Analyzes the interrelationships between multiple variables.
-
-5. **Evaluation**:
-   - Assess model performance using MSE, MAPE, RMSE, and R^2 to ensure accuracy.
-
-6. **Visualization**:
-   - Compare and contrast predictions against actual data visually.
-
-## Future Work
-
-- Explore more sophisticated models like SARIMAX, VARIMAX, LSTM, or Prophet to enhance forecasting accuracy.
-- Integrate price data with company financial statements, and economic data to enrich analysis.
-- Expand the analysis to include real-time data feeds for dynamic prediction capabilities.
-
-## Contributing
-
-Contributions to this project are highly encouraged. You can assist by:
-- Enhancing existing models.
-- Introducing new features and improvements.
-- Identifying and reporting bugs.
-- Proposing enhancements to the documentation.
-
-Please open an issue to discuss significant changes.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+ ## Future Enhancements
+* LSTM / Transformer models for deep learning-based forecasting
+* Reinforcement Learning for adaptive trading strategies
+* Multi-asset portfolio analysis with diversification metrics
