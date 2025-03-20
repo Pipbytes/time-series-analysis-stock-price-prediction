@@ -40,13 +40,13 @@ This project demonstrates time series forecasting and quantitative trading strat
    * Rolling window forecast for more accurate predictions
    * Confidence intervals to assess prediction uncertainty
 4. Trading Strategy
-* Signal Generation:
-   * Buy (1) if predicted price is higher than the current price
-   * Sell (-1) if predicted price is lower than the current price
-* Strategy Performance Evaluation:
-   * Sharpe Ratio
-   * Cumulative Returns
-   * Drawdown Analysis
+   * Signal Generation:
+     * Buy (1) if predicted price is higher than the current price
+     * Sell (-1) if predicted price is lower than the current price
+   * Strategy Performance Evaluation:
+     * Sharpe Ratio
+     * Cumulative Returns
+     * Drawdown Analysis
 
  ## Future Enhancements
 * LSTM / Transformer models for deep learning-based forecasting
